@@ -16,7 +16,18 @@ const Third = () => {
 };
 
 const Wrapper = styled.div`
-  /* omitted */
+  min-height: calc(100vh - 50px);
+  background-color: #f76565;
+  padding: 20px;
+
+  span {
+    color: #fff;
+    font-size: 40px;
+  }
+
+  section {
+    color: #fff;
+  }
 `;
 
 export default Third;

@@ -2,12 +2,15 @@ import React from 'react';
 import { render } from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
 
-import './index.css';
-import App from './App';
+import Header from './Header';
+import Container from './Container';
 
 render(
   <BrowserRouter>
-    <App />
+    <div>
+      <Header />
+      <Container />
+    </div>
   </BrowserRouter>,
   document.getElementById('root')
 );

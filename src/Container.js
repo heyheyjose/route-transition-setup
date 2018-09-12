@@ -1,21 +1,28 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, withRouter } from 'react-router-dom';
+import { TransitionGroup, CSSTransition } from 'react-transition-group';
 
 import Home from './components/Home';
 import First from './components/First';
 import Second from './components/Second';
 import Third from './components/Third';
 
-const Container = () => {
+const Container = ({ location }) => {
   return (
     <Wrapper>
-      <Switch>
-        <Route exact path="/" component={Home} />
-        <Route path="/first" component={First} />
-        <Route path="/second" component={Second} />
-        <Route path="/third" component={Third} />
-      </Switch>
+      <TransitionGroup className="transition-group">
+        <CSSTransition key={location.key} timeout={{ enter: 1000, exit: 1000 }} classNames="fade">
+          <section className="route-section">
+            <Switch>
+              <Route exact path="/" component={Home} />
+              <Route path="/first" component={First} />
+              <Route path="/second" component={Second} />
+              <Route path="/third" component={Third} />
+            </Switch>
+          </section>
+        </CSSTransition>
+      </TransitionGroup>
     </Wrapper>
   );
 };
@@ -27,7 +34,7 @@ const Wrapper = styled.div`
 
   .fade-enter.fade-enter-active {
     opacity: 1;
-    transition: opacity 300ms ease-in;
+    transition: opacity 1000ms ease-in;
   }
 
   .fade-exit {
@@ -36,7 +43,7 @@ const Wrapper = styled.div`
 
   .fade-exit.fade-exit-active {
     opacity: 0.01;
-    transition: opacity 300ms ease-in;
+    transition: opacity 1000ms ease-in;
   }
 
   div.transition-group {
@@ -51,4 +58,4 @@ const Wrapper = styled.div`
   }
 `;
 
-export default Container;
+export default withRouter(Container);

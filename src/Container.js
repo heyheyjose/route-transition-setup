@@ -12,7 +12,7 @@ const Container = ({ location }) => {
   return (
     <Wrapper>
       <TransitionGroup className="transition-group">
-        <CSSTransition key={location.key} timeout={{ enter: 1000, exit: 1000 }} classNames="fade">
+        <CSSTransition key={location.key} timeout={{ enter: 1200, exit: 1200 }} classNames="fade">
           <section className="route-section">
             <Switch>
               <Route exact path="/" component={Home} />
@@ -29,21 +29,21 @@ const Container = ({ location }) => {
 
 const Wrapper = styled.div`
   .fade-enter {
-    opacity: 0.01;
+    opacity: 0.1;
   }
 
   .fade-enter.fade-enter-active {
     opacity: 1;
-    transition: opacity 1000ms ease-in;
+    transition: opacity 1200ms ease-in;
   }
 
   .fade-exit {
-    opacity: 1;
+    opacity: 0.1;
   }
 
   .fade-exit.fade-exit-active {
-    opacity: 0.01;
-    transition: opacity 1000ms ease-in;
+    opacity: 1;
+    transition: opacity 1200ms ease-in;
   }
 
   div.transition-group {

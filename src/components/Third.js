@@ -7,8 +7,11 @@ const Third = () => {
       <span>Third</span>
       <section>
         <p>
-          Curabitur eu feugiat magna, ut malesuada est.
-          {/* omitted */}
+          Umami raw denim viral wayfarers sriracha chicharrones slow-carb. YOLO tumeric actually letterpress tbh,
+          asymmetrical craft beer vice post-ironic. Forage selvage bespoke, asymmetrical lyft food truck salvia. Butcher
+          banjo cred, pug meditation freegan tousled typewriter poke actually pabst. Kinfolk fanny pack godard, hell of
+          tote bag raw denim lomo meggings fingerstache listicle man braid. YOLO thundercats chartreuse, mustache subway
+          tile mumblecore succulents retro tousled hot chicken raclette.
         </p>
       </section>
     </Wrapper>
